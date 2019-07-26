@@ -34,3 +34,17 @@ boton.addEventListener('mouseover', function(){
 boton.addEventListener('mouseout', function(){
 boton.style.background ="black";
 });
+
+
+//focus
+boton.addEventListener('focus', function(){
+    boton.style.background ="black";
+    });
+
+//blur
+
+//keydown
+
+//keypress
+
+//keyup
