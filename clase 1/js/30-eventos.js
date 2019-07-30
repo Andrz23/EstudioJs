@@ -2,6 +2,8 @@
 
 //eventos de raton 
 
+window.addEventListener('load', ()=>{
+
 
 
 function cambiarColor() {
@@ -37,14 +39,31 @@ boton.style.background ="black";
 
 
 //focus
-boton.addEventListener('focus', function(){
-    boton.style.background ="black";
+var input = document.querySelector("#campo_nombre");
+input.addEventListener('focus', function(){
+    console.log("esta adentro");
+    //input.style.background ="black";
     });
 
 //blur
-
+input.addEventListener('blur', function(){
+    console.log("esta fuera");
+    //input.style.background ="black";
+    });
 //keydown
-
+input.addEventListener('keydown', function(event){
+    console.log("pulsando esta tecla", String.fromCharCode(event.keyCode));
+    //input.style.background ="black";
+    });
 //keypress
-
+input.addEventListener('keypress', function(){
+    console.log("tecla presionada", String.fromCharCode(event.keyCode));
+    //input.style.background ="black";
+    });
 //keyup
+input.addEventListener('keyup', function(){
+    console.log("tecla soltada", String.fromCharCode(event.keyCode));
+    //input.style.background ="black";
+    });
+
+});// final del load
