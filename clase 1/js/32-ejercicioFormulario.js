@@ -20,7 +20,10 @@ var edad =parseInt(document.querySelector("#edad").value);
 
 if(nombre.trim() == null || nombre.length == 0 ){
    alert("Nombre no valido");
+   document.querySelector("#error_nombre").innerHTML ="El nombre no es valido";
     return false;
+}else{
+    document.querySelector("#error_nombre").style.display ="none";
 }
 
 if(apellido.trim() == null || apellido.length == 0 ){
