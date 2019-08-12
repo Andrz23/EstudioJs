@@ -28,11 +28,19 @@ window.addEventListener('load', () => {
            ListaUsuarios(data)
 
 
-           return getUsuario();
+          
+           return getinfo();
+        })
+        .then(data=>{
+            console.log(data);
+            
+            return getUsuario();
         })
         .then(data => data.json())
         .then(usuario =>{
+               mostrarUsuario(usuario);
 
+               
         }); //-> y tomanos el objeto data con el json y se la pasamos al array de usuarios
 
 
@@ -42,6 +50,29 @@ function getUsuarios(){
 
 function getUsuario(){
 return fetch('https://jsonplaceholder.typicode.com/users/1')
+}
+
+
+function getinfo(){
+    var profesor ={
+        nombre : 'Andres',
+        apellidos : 'Morales',
+        url : 'https://www.udemy.com/'
+    };
+
+    return new Promise((resolve, reject)=>{
+        var profesor_string = "";
+        setTimeout(function(){
+            profesor_string = JSON.stringify(profesor);
+        },3000);
+
+        if(typeof profesor_string != 'string' || profesor_string =="" ) return reject('error');
+        
+        return resolve(profesor_string);
+        
+
+    });
+
 }
 
 
@@ -61,14 +92,17 @@ return fetch('https://jsonplaceholder.typicode.com/users/1')
 
 
 
-function mostrarUsuario(usuarios) {
+function mostrarUsuario(usuario) {
+
+    console.log(usuario);
         // se crea el nuevo elemento donde se colocan los nombre y los usuarios
         let nombre = document.createElement('h4');
-        nombre.innerHTML = i + "  " + data.name + " - " + data.username;
+
+        nombre.innerHTML =  usuario.name + " - " + usuario.username;
         // se agregan los nombre del json en el div 
         divUsuario.appendChild(nombre);
 
-        document.querySelector(".loading").style.display = 'none';
+        document.querySelector("#usuario .loading").style.display = 'none';
    
 }
 
