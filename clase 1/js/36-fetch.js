@@ -19,27 +19,57 @@ fetch -> es como un sustituto de ajax, metodo que hace peticiones de ajax
 window.addEventListener('load', () => {
 
     var divUsuarios = document.querySelector("#usuarios");
+    var divUsuario = document.querySelector("#usuario");
 
-    var usuarios = [];
     //Realizamos el llamado al api (datos remotos)
-    fetch('https://jsonplaceholder.typicode.com/users')
+    getUsuarios()
         .then(data => data.json()) //-> se captura los datos del json que me devuelve el api y se convierte en json
-        .then(data => {
-            usuarios = data;
-            console.log(usuarios);
-            // Se recorre el objeto dato que contiene los datos del json
-            usuarios.map((data, i) => {
-                // se crea el nuevo elemento donde se colocan los nombre y los usuarios
-                let nombre = document.createElement('h3');
-                nombre.innerHTML = i + "  " + data.name + " - " + data.username;
-                // se agregan los nombre del json en el div 
-                divUsuarios.appendChild(nombre);
+        .then(data => { //-> promesas 
+           ListaUsuarios(data)
 
-                document.querySelector(".loading").style.display ='none';
-            });
+
+           return getUsuario();
+        })
+        .then(data => data.json())
+        .then(usuario =>{
 
         }); //-> y tomanos el objeto data con el json y se la pasamos al array de usuarios
 
 
+function getUsuarios(){
+   return fetch('https://jsonplaceholder.typicode.com/users')
+}
+
+function getUsuario(){
+return fetch('https://jsonplaceholder.typicode.com/users/1')
+}
+
+
+    function ListaUsuarios(usuarios) {
+        // Se recorre el objeto dato que contiene los datos del json
+        usuarios.map((data, i) => {
+            // se crea el nuevo elemento donde se colocan los nombre y los usuarios
+            let nombre = document.createElement('h3');
+            nombre.innerHTML = i + "  " + data.name + " - " + data.username;
+            // se agregan los nombre del json en el div 
+            divUsuarios.appendChild(nombre);
+
+            document.querySelector(".loading").style.display = 'none';
+        });
+}
+
+
+
+
+function mostrarUsuario(usuarios) {
+        // se crea el nuevo elemento donde se colocan los nombre y los usuarios
+        let nombre = document.createElement('h4');
+        nombre.innerHTML = i + "  " + data.name + " - " + data.username;
+        // se agregan los nombre del json en el div 
+        divUsuario.appendChild(nombre);
+
+        document.querySelector(".loading").style.display = 'none';
+   
+}
 
 });
