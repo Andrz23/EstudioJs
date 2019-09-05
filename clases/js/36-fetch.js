@@ -19,6 +19,7 @@ fetch -> es como un sustituto de ajax, metodo que hace peticiones de ajax
 window.addEventListener('load', () => {
 
     var divUsuarios = document.querySelector("#usuarios");
+    var divProfesor = document.querySelector("#profesor");
     var divUsuario = document.querySelector("#usuario");
 
     //Realizamos el llamado al api (datos remotos)
@@ -28,12 +29,11 @@ window.addEventListener('load', () => {
            ListaUsuarios(data)
 
 
-          
+            
            return getinfo();
         })
         .then(data=>{
-            console.log(data);
-            
+            divProfesor.innerHTML = data;
             return getUsuario();
         })
         .then(data => data.json())
@@ -41,6 +41,9 @@ window.addEventListener('load', () => {
                mostrarUsuario(usuario);
 
                
+        })
+        .catch(error =>{//-> capturar error en las promesas 
+        console.log(error);
         }); //-> y tomanos el objeto data con el json y se la pasamos al array de usuarios
 
 
@@ -62,15 +65,16 @@ function getinfo(){
 
     return new Promise((resolve, reject)=>{
         var profesor_string = "";
+
         setTimeout(function(){
             profesor_string = JSON.stringify(profesor);
+
+            if(typeof profesor_string != 'string' || profesor_string =="" ) return reject('error');
+        
+            return resolve(profesor_string);
+
         },3000);
-
-        if(typeof profesor_string != 'string' || profesor_string =="" ) return reject('error');
         
-        return resolve(profesor_string);
-        
-
     });
 
 }
