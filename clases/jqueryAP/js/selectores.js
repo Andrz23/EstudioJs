@@ -30,13 +30,21 @@ $(document).ready(function () {
         var This = $(this);
         if (!This.hasClass('grande')) {
             This.addClass('grande');
-        }else{
+        } else {
             This.removeClass('grande');
         }
-
-        // selectores de atributos
-      $('[title = Google]').css('background', '#ccc');
-      $('[title = Udemy]').css('background', 'blue');
     });
+
+    // selectores de atributos
+    $('[title = Google]').css('background', '#ccc');
+    $('[title = Udemy]').css('background', 'blue');
+
+    // otros 
+    // $('p, a').addClass('margen-superior');
+
+    //var busquedacaja = $("#caja").find('.resaltado');
+    //parent() 
+    var busqueda = $("#elemento2").parent().parent().find('.resaltado');
+    console.log(busqueda);
 
 });
