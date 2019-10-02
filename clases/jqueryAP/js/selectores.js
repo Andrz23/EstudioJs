@@ -46,5 +46,6 @@ $(document).ready(function () {
     //parent() 
     var busqueda = $("#elemento2").parent().parent().find('.resaltado');
     console.log(busqueda);
+    
 
 });
