@@ -22,29 +22,55 @@ normal
     var bottonMostrar = $("#mostrar");
     var bottonOcultar = $("#ocultar");
     var todoEnuno = $("#todoenuno");
-    var animame =$("#animame");
+    var animame = $("#animame");
 
     bottonMostrar.hide();
     bottonMostrar.click(function () {
         var that = $(this);
         that.hide();
         bottonOcultar.show();
-        caja.fadeTo('slow', 1);
+        caja.fadeIn('slow', function(){
+            console.log("cartel  mostrado");
+        });
     });
 
     bottonOcultar.click(function () {
         var that = $(this);
         that.hide();
         bottonMostrar.show();
-        caja.fadeTo('slow', 0);
+        //Utilizar las funcioness de callback(anonimas) como segundo parametro
+        caja.fadeOut('slow', function(){
+            console.log("cartel ocultado");
+        });
     });
 
-    todoEnuno.click(function(){
-     caja.slideToggle('fast');
+    todoEnuno.click(function () {
+        caja.slideToggle('fast');
     });
 
-    animame.click(function(){
-        caja.animate({marginLeft : '500px'},'slow');
+    animame.click(function () {
+        caja.animate({
+            marginLeft: '500px',
+            fintSize: '40px',
+            height: '81px'
+        }, 'slow')
+            .animate({
+                borderRadius: '900px',
+                marginTop: '80px'
+            }, 'slow')
+            .animate({
+                borderRadius: '0px',
+                marginLeft: '0px'
+            }, 'slow')
+            .animate({
+                borderRadius: '900px',
+                marginTop: '0px'
+            }, 'slow')
+            .animate({
+                marginLeft: '500px',
+                fintSize: '40px',
+                height: '81px'
+            }, 'slow');
     });
 
 });
