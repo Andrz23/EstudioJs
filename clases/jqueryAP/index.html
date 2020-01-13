@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Aprediendo JQuery</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script type="text/javascript" src='js/jquery-3.4.1.min.js'></script>
+    <script type="text/javascript" src="js/selectores.js"></script>
+    <style>
+        .zebra {
+            border: 5px dashed black;
+        }
+
+        .grande {
+            font-size: 30px;
+        }
+
+        .margen_superior {
+            margin-top: 45px;
+            display: block;
+        }
+        .resaltado{
+            border-bottom: 2px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Aprediendo jQuery con victor robles</h1>
+    <ul>
+        <li><a href="htpps://www.gooogle.com" title="Google">ir a Google </a></li>
+        <li><a href="https://www.udemy.com" title="Udemy">Ir a udemy</a></li>
+    </ul>
+    <p id="amarillo" class="sin_borde">Ejercicios de Jquery</p>
+    <p id="verde" class="zebra">Ejercicios de Jquery</p>
+    <p id="rojo" class="sin_borde">Soy un parrafo blanco</p>
+    <p class="zebra">Soy blaco</p>
+    <p class="sin_borde">Soy negro </p>
+
+    <div id="caja">
+        <p>Hola soy la caja </p>
+        <ul>
+            <li>elemeto 1</li>
+            <li id="elemeto2"> Elemento 2 </li>
+        </ul>
+        <span class="resaltado">soy un span</span>
+    </div>
+</body>
+
+</html>

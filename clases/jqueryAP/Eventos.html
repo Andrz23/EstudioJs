@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Aprediendo JQuery</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script type="text/javascript" src='js/jquery-3.4.1.min.js'></script>
+    <script type="text/javascript" src="js/02-Eventos.js"></script>
+    <style>
+        #caja {
+            width: 250px;
+            height: 250px;
+            border: 2px solid black;
+            background: yellow;
+        }
+
+        /* /*
+    #caja:hover{
+        background: red;
+        cursor: pointer;
+    }
+    * */
+
+        input {
+            padding: 10px;
+            width: 300px;
+            font-size: 20px;
+        }
+
+        #datos {
+            border: 2px dashed black;
+            padding: 10px;
+            width: 250px;
+            height: 50px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        #sigueme {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            display: block;
+            background: yellow;
+            opacity: 0.5;
+            border: 3px solid black;
+            border-radius: 999px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Aprediendo jQuery con victor robles - Eventos </h1>
+
+    <div id="sigueme"></div>
+
+    <form>
+        <input type="text" id="nombre" />
+    </form>
+    <div id="datos"></div>
+
+    <br>
+    <div id="caja">
+        Soy una caja
+    </div>
+</body>
+
+</html>
