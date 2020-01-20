@@ -1,0 +1,36 @@
+Angular 
+  ->    elemetos 
+  
+  componentes, plantillas, decoradores y metadatos, services y provider directivas y modulos 
+  
+--------------------------------------------------------------------------------------------  
+  componentes : Un componente al final va a controlar un trozo de pantalla o de la vista 
+  todo lo que se puede ver en pantalla  es controlado y gestionado por  este tipo de elemetos
+  
+  la logica de un componente da soporte de una vista interactuando con ella atravez  de un APi con propiedades y metodos
+  componente se encarga de mediador entre la vista atravez de la plantilla y la logica de programacion 
+  
+  
+  Componente == Controlador 
+  
+  ------------------------------------------------------------------------------------------------
+  plantillas : Las vistas de los componentes, ficheros html y tienen sintaxis eespecial de angular trabaja con 
+databinding y las directivas 
+
+
+decoradores y metadatos : ccon los decoradoes (patron de diseño) vamos a configurar dinamicamente las clases de nuestro componente
+de angular, metadatos dentro de un decoradoes van a describir una serie de relaciones y caracteristacas 
+
+
+provider : son servicios que nos proveen de datos o funcionalidades mediante sus metodos. Existen provider/serivice
+propios de angular o creados por nosotros mismos
+
+
+directivas : son funcionalidades aplicables al DOM y a los emelemtos de l hmtl que hay enn las plantillas de un componente 
+
+modulos : 
+
+  
+  
+  
+  
