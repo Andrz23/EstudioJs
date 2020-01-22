@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { videoJuegoComponent } from './videoJuegos/videoJuego.component';
 import { TennisComponent } from './Tennis/tennis.component';
+import { CursosComponent } from './cursos/cursos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     videoJuegoComponent,
-    TennisComponent
+    TennisComponent,
+    CursosComponent
   ],
   imports: [
     BrowserModule
